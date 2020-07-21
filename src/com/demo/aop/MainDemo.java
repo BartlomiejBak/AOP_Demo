@@ -14,6 +14,9 @@ public class MainDemo {
         accountDAO.addAccounts();
         membershipDAO.addAccount();
         membershipDAO.addSomething();
+
+        membershipDAO.getThisName();
+
         context.close();
     }
 }

@@ -6,11 +6,11 @@ import org.springframework.stereotype.Component;
 public class AccountDAO {
 
     public void addAccount() {
-        System.out.println(getClass() + ": doing stuff");
+        System.out.println(getClass() + ": doing stuff\n");
     }
 
     public boolean addAccounts() {
-        System.out.println(" weird method ");
+        System.out.println(" weird method \n");
         return true;
     }
 }
