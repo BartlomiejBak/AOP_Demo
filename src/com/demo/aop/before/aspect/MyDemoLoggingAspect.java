@@ -1,4 +1,4 @@
-package com.demo.aop.aspect;
+package com.demo.aop.before.aspect;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -24,14 +24,13 @@ import org.springframework.stereotype.Component;
 public class MyDemoLoggingAspect {
 
     //Method for reusing pointcut expression
-    @Pointcut("execution(public void com.demo.aop.dao.AccountDAO.addAccount())")
+    @Pointcut("execution(public void com.demo.aop.before.dao.AccountDAO.addAccount())")
     private void forAccountDAOAddAccount() {};
 
     @Before("execution(public void addAccount())")
     public void beforeAddAccountAdvice() {
         System.out.println("\n==========>>> @Before any addAccount() class that returns void");
     }
-
 
     @Before("forAccountDAOAddAccount()")
     public void onlyBeforeAccountDaoAdvice() {

@@ -1,4 +1,4 @@
-package com.demo.aop;
+package com.demo.aop.before;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
