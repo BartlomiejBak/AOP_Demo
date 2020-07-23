@@ -32,4 +32,12 @@ public class AccountDAO {
     public void addAccount(Account account, boolean vipFlag) {
         System.out.println(getClass() + ": doing stuff\n");
     }
+
+    public List<Account> findAccounts(boolean tripWire) {
+        if (tripWire) {
+            throw new RuntimeException("We are throwing exception");
+        } else {
+            return findAccounts();
+        }
+    }
 }
