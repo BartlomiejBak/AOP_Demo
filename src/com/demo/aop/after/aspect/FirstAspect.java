@@ -2,6 +2,7 @@ package com.demo.aop.after.aspect;
 
 import com.demo.aop.after.Account;
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
@@ -15,9 +16,15 @@ import java.util.List;
 @Order(1)
 public class FirstAspect {
 
+    @After("execution(* com.demo.aop.after.dao.AccountDAO.findAccounts(..))")
+    public void afterFinallyFindAccountsAdvice(JoinPoint joinPoint) {
+        System.out.println("-+-+-+-+- @After");
+    }
+
+
     @AfterReturning(
-                    pointcut = "execution(* com.demo.aop.after.dao.AccountDAO.findAccounts(..))",
-                    returning = "result")
+            pointcut = "execution(* com.demo.aop.after.dao.AccountDAO.findAccounts(..))",
+            returning = "result")
     public void afterReturningFindAccountsAdvice(JoinPoint joinPoint, List<Account> result) {
         System.out.println("+++++++++ @AfterReturning //");
 
