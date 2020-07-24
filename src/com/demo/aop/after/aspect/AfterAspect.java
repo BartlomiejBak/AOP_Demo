@@ -14,7 +14,7 @@ import java.util.List;
 @Aspect
 @Component
 @Order(1)
-public class FirstAspect {
+public class AfterAspect {
 
     @After("execution(* com.demo.aop.after.dao.AccountDAO.findAccounts(..))")
     public void afterFinallyFindAccountsAdvice(JoinPoint joinPoint) {
